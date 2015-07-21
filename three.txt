@@ -1,19 +1,24 @@
+/**
+		 * åƒåˆ†ä½æ³•è¡¨ç¤ºæ•°å­—
+		 * @param num ç›®æ ‡æ•°å­—
+		 * @return åƒåˆ†ä½è¡¨è¾¾å­—ç¬¦
+		 */	
 function qianfen(num:Number):String{
 	var numStr:String = num + '';
 	var commaCount:int = (numStr.length - 1)/ 3;
 	trace(commaCount);
-	//ÇĞ¸îµÄ¶ººÅ¸öÊı
+	//åˆ‡å‰²çš„é€—å·ä¸ªæ•°
 	var head:String = numStr.substr(0,numStr.length - commaCount * 3);
-	//Í·²¿µÄÊ£Óà×Ö·û
+	//å¤´éƒ¨çš„å‰©ä½™å­—ç¬¦
 	var result:String = '';
 	for (var i:int = 0; i < commaCount; i++) 
 	{
-		//Ñ­»·Ìí¼ÓÎ²²¿",000"µÄ½á¹¹
+		//å¾ªç¯æ·»åŠ å°¾éƒ¨",000"çš„ç»“æ„
 		result = ',' + numStr.substr(-3 * (i + 1),3) + result;
-		//¼ÆËãÃ¿´ÎµÄÎ²²¿½á¹¹
+		//è®¡ç®—æ¯æ¬¡çš„å°¾éƒ¨ç»“æ„
 	}
 	return head + result;
-	//·µ»Ø×îÖÕµÄ±í´ïÊ½½á¹û
+	//è¿”å›æœ€ç»ˆçš„è¡¨è¾¾å¼ç»“æœ
 }
 			
  trace(qianfen(123020323456789));
