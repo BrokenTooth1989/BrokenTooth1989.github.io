@@ -1,0 +1,19 @@
+function qianfen(num:Number):String{
+	var numStr:String = num + '';
+	var commaCount:int = (numStr.length - 1)/ 3;
+	trace(commaCount);
+	//切割的逗号个数
+	var head:String = numStr.substr(0,numStr.length - commaCount * 3);
+	//头部的剩余字符
+	var result:String = '';
+	for (var i:int = 0; i < commaCount; i++) 
+	{
+		//循环添加尾部",000"的结构
+		result = ',' + numStr.substr(-3 * (i + 1),3) + result;
+		//计算每次的尾部结构
+	}
+	return head + result;
+	//返回最终的表达式结果
+}
+			
+ trace(qianfen(123020323456789));
